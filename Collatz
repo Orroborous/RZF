@@ -1,0 +1,45 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+
+def generate_multiway_system(n):
+    # create a directed graph
+    G = nx.DiGraph()
+    
+    # add node 1 to the center
+    G.add_node(1, pos=(0,0))
+    
+    # initialize queue with node 1
+    queue = [(1, 0)]
+    
+    # while there are still nodes to process
+    while queue:
+        node, level = queue.pop(0)
+        # if level is odd, connect to node 1+2n with a red arrow
+        if level % 2 == 1:
+            next_node = 1 + 2 * node
+            G.add_edge(node, next_node, color='red', weight=2)
+            # add next_node to the queue
+            queue.append((next_node, level+1))
+        # if level is even, connect to node 2n with a blue arrow
+        else:
+            next_node = 2 * node
+            G.add_edge(node, next_node, color='blue', weight=1)
+            # add next_node to the queue
+            queue.append((next_node, level+1))
+            
+    return G
+
+# generate multiway system with 20 nodes
+G = generate_multiway_system(20)
+
+# get positions of nodes for plotting
+pos = nx.get_node_attributes(G, 'pos')
+
+# get colors of edges for plotting
+edge_colors = nx.get_edge_attributes(G, 'color').values()
+
+# draw graph with red edges for 1+2n and blue edges for 2n
+nx.draw_networkx(G, pos, node_size=500, font_size=20, edge_color=edge_colors, width=2)
+
+# show plot
+plt.show()
