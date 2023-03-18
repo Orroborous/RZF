@@ -7,7 +7,7 @@ Attempts to generate well-ordered vs non-well ordered visual multway system via 
 ![image](https://user-images.githubusercontent.com/54874866/226145664-ed964e8c-9a24-4b04-b241-1c328261a939.png)
 
 
-will generate a well-ordered visual multiway system, while others appear to be random with apparant structure, even out to very large integer inputs. This depends on the original paramaters used to establish the multiway system.
+will generate a well-ordered visual multiway system, while others appear to be random, even out to very large integer inputs. To generate such multiway systems visually, the paramters are inversed where the Collatz tree (attempts) to start at node 1 and proceeds depending on the value of the input.
 
 Known well-ordered parameters
 
