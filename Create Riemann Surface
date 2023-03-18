@@ -1,0 +1,22 @@
+import numpy as np
+import plotly.graph_objects as go
+
+# Define the function
+def f(z):
+    return np.sqrt((z-1)**2 + 2*z - 1)
+
+# Define the real and imaginary ranges for the plot
+x_range = np.linspace(-5, 5, 500)
+y_range = np.linspace(-5, 5, 500)
+
+# Create a 2D grid of complex numbers
+xx, yy = np.meshgrid(x_range, y_range)
+z = xx + 1j*yy
+
+# Evaluate the function at each point in the grid
+w = f(z)
+
+# Create the Riemann surface plot
+fig = go.Figure(data=[go.Surface(x=xx, y=yy, z=w.real, surfacecolor=w.imag)])
+fig.update_layout(scene=dict(aspectratio=dict(x=1, y=1, z=1), xaxis_title='Re(z)', yaxis_title='Im(z)', zaxis_title='w'))
+fig.show()
