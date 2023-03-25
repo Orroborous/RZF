@@ -1,5 +1,7 @@
 # RZF
 
+WIP  
+
 ## Intro
 Theoretical research inspired by Sir Richard Southwell [2013] https://youtu.be/t9L05SWzdOc?t=380.      
 
