@@ -63,12 +63,9 @@ This conjecture can be demonstrated as a directed graph (https://en.wikipedia.or
   
   
 ![image](https://user-images.githubusercontent.com/54874866/227743100-259ffa97-4052-4405-afa8-89601df6ac93.png)
-
-
-
-
-
-Theoretical research inspired by Sir Richard Southwell [2013] https://youtu.be/t9L05SWzdOc?t=380.      
+    
 
 Analytical research inspired by ROBERT J. LEMKE OLIVER AND KANNAN SOUNDARARAJAN, "UNEXPECTED BIASES IN THE DISTRIBUTION OF CONSECUTIVE
 PRIMES" [2016]. https://arxiv.org/abs/1603.03720v4 and Chebyshev's Bias [1853] https://en.wikipedia.org/wiki/Chebyshev's_bias.  
+  
+Theoretical research inspired by Sir Richard Southwell [2013] https://youtu.be/t9L05SWzdOc.
