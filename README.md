@@ -3,14 +3,8 @@
 WIP  
 
 ## Intro
-Theoretical research inspired by Sir Richard Southwell [2013] https://youtu.be/t9L05SWzdOc?t=380.      
 
-Analytical research inspired by ROBERT J. LEMKE OLIVER AND KANNAN SOUNDARARAJAN, "UNEXPECTED BIASES IN THE DISTRIBUTION OF CONSECUTIVE
-PRIMES" [2016]. https://arxiv.org/abs/1603.03720v4 and Chebyshev's Bias [1853] https://en.wikipedia.org/wiki/Chebyshev's_bias.  
-
-## Algo
-
-This algorithm creates visual multiway systems via python/networkx based on rules of the Collatz Conjecture. These Collatz-tree-like structures are created by taking a starting number, n, and apply different rules depending on whether n is odd or even. Arrows in red show the first transformation, and arrows in blue show the second. After the transformation, the output of the function is inputted recursively, until the function terminates or expands to infinity.  
+This algorithm creates visual multiway systems via python/networkx based on rules of the Collatz Conjecture. These Collatz-tree-like structures are created by taking a starting number, n, and apply different rules depending on whether n is odd or even. Arrows in red show the first transformation, and arrows in blue show the second. After the transformation, the output of the function is inputted recursively until the supplied iteration. 
 
 Some rules generate well-ordered multiway systems. 
 
@@ -40,16 +34,6 @@ Other rules generate nonwell-ordered multiway systems.
     
 This is a pursuit to understand why.   
   
-## Collatz
-The original conjecture, otherwise known as the 3n+1 problem, has been an unsolved puzzle in mathematics. If n is even, the number is halved, and if n is odd, it is multiplied by 3 and added to 1. In all cases of positive n, the function eventually terminates to 1. 
- 
-![image](https://user-images.githubusercontent.com/54874866/226145664-ed964e8c-9a24-4b04-b241-1c328261a939.png)
-
-This conjecture can be demonstrated as a directed graph (https://en.wikipedia.org/wiki/Directed_graph). The figure below is a Directed Graph of all starting positive integers that terminate to 1 in less than 20 steps.  
-  
-  
-![image](https://user-images.githubusercontent.com/54874866/227743100-259ffa97-4052-4405-afa8-89601df6ac93.png)
-
 
 Known well-ordered parameters
 
@@ -69,3 +53,22 @@ Known nonwell-ordered parameters
 
 It is believed that relationships between well ordered and nonwell-ordered multiway systems generated with Complex numbers may have bearing in proving nontrivial zeros of the Riemann Zeta Function [1853] https://en.wikipedia.org/wiki/Riemann_hypothesis.
 
+
+## Collatz
+The original conjecture, otherwise known as the 3n+1 problem, has been an unsolved puzzle in mathematics. If n is even, the number is halved, and if n is odd, it is multiplied by 3 and added to 1. In all cases of positive n, the function eventually terminates to 1. 
+ 
+![image](https://user-images.githubusercontent.com/54874866/226145664-ed964e8c-9a24-4b04-b241-1c328261a939.png)
+
+This conjecture can be demonstrated as a directed graph (https://en.wikipedia.org/wiki/Directed_graph). The figure below is a Directed Graph of all starting positive integers that terminate to 1 in less than 20 steps.  
+  
+  
+![image](https://user-images.githubusercontent.com/54874866/227743100-259ffa97-4052-4405-afa8-89601df6ac93.png)
+
+
+
+
+
+Theoretical research inspired by Sir Richard Southwell [2013] https://youtu.be/t9L05SWzdOc?t=380.      
+
+Analytical research inspired by ROBERT J. LEMKE OLIVER AND KANNAN SOUNDARARAJAN, "UNEXPECTED BIASES IN THE DISTRIBUTION OF CONSECUTIVE
+PRIMES" [2016]. https://arxiv.org/abs/1603.03720v4 and Chebyshev's Bias [1853] https://en.wikipedia.org/wiki/Chebyshev's_bias.  
