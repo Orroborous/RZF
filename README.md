@@ -10,27 +10,29 @@ Some rules generate well-ordered multiway systems.
 
 1+x, 2x  
   
-![image](https://user-images.githubusercontent.com/54874866/228117102-fb36c61c-ea10-41f3-be1a-28ae685b8afa.png)
-
+![image](https://user-images.githubusercontent.com/54874866/228117102-fb36c61c-ea10-41f3-be1a-28ae685b8afa.png)  
+Image Credit: Sir Richard Southwell [2013] https://youtu.be/t9L05SWzdOc.  
+  
 1+2x, 2x  
 
 
-![image](https://user-images.githubusercontent.com/54874866/228117808-aa65559f-d8c2-421c-9392-df507dc89699.png)
-
+![image](https://user-images.githubusercontent.com/54874866/228117808-aa65559f-d8c2-421c-9392-df507dc89699.png)  
+Image Credit: Sir Richard Southwell [2013] https://youtu.be/t9L05SWzdOc.  
+  
 Other rules generate nonwell-ordered multiway systems.  
   
     
    
 1+3x, 2x  
   
-![image](https://user-images.githubusercontent.com/54874866/228118058-52c939b0-86d4-45aa-80d3-64f81008aa0f.png)
-  
+![image](https://user-images.githubusercontent.com/54874866/228118058-52c939b0-86d4-45aa-80d3-64f81008aa0f.png)  
+Image Credit: Sir Richard Southwell [2013] https://youtu.be/t9L05SWzdOc.  
   
   
 2+3x, 2x  
 
-![image](https://user-images.githubusercontent.com/54874866/228118303-bcc7c3b4-113a-4acb-b834-9bb2f7e691d4.png)
-    
+![image](https://user-images.githubusercontent.com/54874866/228118303-bcc7c3b4-113a-4acb-b834-9bb2f7e691d4.png)  
+Image Credit: Sir Richard Southwell [2013] https://youtu.be/t9L05SWzdOc.      
     
 This is a pursuit to understand why.   
   
