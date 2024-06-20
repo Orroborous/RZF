@@ -1,0 +1,58 @@
+!pip install networkx matplotlib
+
+import matplotlib.pyplot as plt
+import networkx as nx
+import math
+
+def generate_multiway_system(start, steps, f1, f2, max_value=20):
+    G = nx.DiGraph()
+    queue = [start]
+    for _ in range(steps):
+        if not queue:
+            break
+        current = queue.pop(0)
+        for f in [f1, f2]:
+            next_val = f(current)
+            if next_val <= max_value and next_val not in G:
+                G.add_edge(current, next_val)
+                queue.append(next_val)
+    return G
+
+def radial_layout(G, root=1):
+    pos = {root: (0, 0)}
+    seen = set([root])
+    layers = [[root]]
+    while layers[-1]:
+        new_layer = []
+        for parent in layers[-1]:
+            children = [child for child in G.neighbors(parent) if child not in seen]
+            new_layer.extend(children)
+            seen.update(children)
+            angle_step = 2 * math.pi / len(children) if children else 0
+            radius = len(layers)
+            for i, child in enumerate(children):
+                angle = i * angle_step
+                pos[child] = (radius * math.cos(angle), radius * math.sin(angle))
+        if new_layer:
+            layers.append(new_layer)
+    return pos
+
+def test_pairing(f1, f2, name):
+    G = generate_multiway_system(1, 20, f1, f2, max_value=20)
+    
+    plt.figure(figsize=(12, 12))
+    pos = radial_layout(G)
+    
+    nx.draw(G, pos, node_size=300, with_labels=True, arrows=True, 
+            node_color='lightblue', font_size=6, font_weight='bold')
+    
+    edge_colors = ['red' if f1(min(u, v)) == max(u, v) else 'blue' for u, v in G.edges()]
+    nx.draw_networkx_edges(G, pos, edge_color=edge_colors, arrows=True)
+    
+    plt.title(name)
+    plt.axis('off')
+    plt.tight_layout()
+    plt.show()
+
+# Test the pairing
+test_pairing(lambda x: 2*x, lambda x: 1+2*x, "2x (blue) and 1+2x (red)")
