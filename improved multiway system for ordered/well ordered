@@ -1,0 +1,55 @@
+import matplotlib.pyplot as plt
+import networkx as nx
+
+def generate_multiway_system(start, steps, f1, f2, max_value=1000):
+    G = nx.DiGraph()
+    queue = [start]
+    for _ in range(steps):
+        if not queue:
+            break
+        current = queue.pop(0)
+        for f in [f1, f2]:
+            next_val = f(current)
+            if next_val <= max_value and next_val not in G:
+                G.add_edge(current, next_val)
+                queue.append(next_val)
+    return G
+
+def analyze_system(G):
+    cycles = list(nx.simple_cycles(G))
+    non_trivial_cycles = [c for c in cycles if len(c) > 1 or c[0] != 1]
+    
+    nodes = list(G.nodes())
+    coverage = len(nodes) / max(nodes) if nodes else 0
+    
+    max_degree = max(dict(G.degree()).values()) if G.degree() else 0
+    
+    return {
+        "nodes": len(nodes),
+        "edges": G.number_of_edges(),
+        "non_trivial_cycles": len(non_trivial_cycles),
+        "coverage": coverage,
+        "max_degree": max_degree
+    }
+
+def test_pairing(f1, f2, name):
+    G = generate_multiway_system(1, 1000, f1, f2)
+    analysis = analyze_system(G)
+    print(f"Analysis for {name}:")
+    print(f"  Nodes: {analysis['nodes']}")
+    print(f"  Edges: {analysis['edges']}")
+    print(f"  Non-trivial cycles: {analysis['non_trivial_cycles']}")
+    print(f"  Coverage: {analysis['coverage']:.2f}")
+    print(f"  Max degree: {analysis['max_degree']}")
+    
+    plt.figure(figsize=(10, 10))
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, node_size=20, with_labels=False, arrows=True)
+    plt.title(name)
+    plt.show()
+
+# Test different pairings
+test_pairing(lambda x: 2*x, lambda x: 1+2*x, "2x and 1+2x")
+test_pairing(lambda x: 2*x, lambda x: 2+3*x, "2x and 2+3x")
+test_pairing(lambda x: 3*x, lambda x: x+1, "3x and x+1")
+test_pairing(lambda x: 2*x+1, lambda x: 3*x+1, "2x+1 and 3x+1")
